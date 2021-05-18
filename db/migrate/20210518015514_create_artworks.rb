@@ -1,7 +1,7 @@
-class CreateProducts < ActiveRecord::Migration[6.1]
+class CreateArtworks < ActiveRecord::Migration[6.1]
   def change
-    create_table :products do |t|
-      t.string :item_name
+    create_table :artworks do |t|
+      t.string :title
       t.text :description
       t.decimal :price
       t.integer :stock
