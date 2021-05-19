@@ -1,0 +1,12 @@
+<h1>Create a job</h1>
+
+<%= form_for :post, url do |f| %>
+    <%= f.label :job_title %>
+    <%= f.text_field :job_title %>
+
+    <%= f.label :job_description %>
+    <%= f.text_area :job_description %>
+
+    
+    <%= f.submit %>
+<% end %>

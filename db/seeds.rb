@@ -6,3 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Job.destroy_all
+User.destroy_all
+
+    user1 = User.create(
+        username: "User1",
+        first_name: "Potato",
+        last_name: "Salad",
+        email: "goof@ezy.com",
+        password: "123456",
+    )
+
+   user2 = User.create(
+        username: "user5",
+        first_name: "Carrot",
+        last_name: "Leaf",
+        email: "lolly@ezy.com",
+        password: "123456",
+        )
+
+
+Job.create(title: "Snake invasion", description: "Remove infestation of snakes from my house", amount: 150.00, user: user1)
+Job.create(title: "Kill a vampire", description: "Kill the notorious vampire Xenos for me", amount: 300.00, user: user2)

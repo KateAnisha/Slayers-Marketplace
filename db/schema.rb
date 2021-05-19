@@ -10,12 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_004651) do
+ActiveRecord::Schema.define(version: 2021_05_19_021111) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "jobs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.text "description"
+    t.decimal "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_jobs_on_user_id"
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
@@ -39,11 +52,12 @@ ActiveRecord::Schema.define(version: 2021_05_19_004651) do
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "roles_id"
+    t.bigint "user_id"
+    t.bigint "roles_id"
     t.index ["roles_id"], name: "index_users_roles_on_roles_id"
     t.index ["user_id", "roles_id"], name: "index_users_roles_on_user_id_and_roles_id"
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "jobs", "users"
 end
