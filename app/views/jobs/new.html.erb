@@ -1,0 +1,14 @@
+<h1>Create a job</h1>
+
+<%= form_for :job, url: jobs_path do |f|%>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.label :amount %>
+    <%= f.text_field number_to_currency(:amount)%>
+    
+    <%= f.submit %>
+<% end %>
