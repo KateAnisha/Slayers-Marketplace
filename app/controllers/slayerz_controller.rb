@@ -7,4 +7,9 @@ class SlayerzController < ApplicationController
     def show
         @job = Job.find(params[:id])
     end
+
+    def turn_into_slayer
+        current_user.add_role :slayer
+        redirect_to home_path
+      end
 end

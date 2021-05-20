@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_19_021111) do
+ActiveRecord::Schema.define(version: 2021_05_20_052141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2021_05_19_021111) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_jobs_on_user_id"
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "race_name"
+    t.text "race_description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_races_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -47,6 +56,8 @@ ActiveRecord::Schema.define(version: 2021_05_19_021111) do
     t.string "username"
     t.string "first_name"
     t.string "last_name"
+    t.text "bio"
+    t.string "weapon"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -60,4 +71,5 @@ ActiveRecord::Schema.define(version: 2021_05_19_021111) do
   end
 
   add_foreign_key "jobs", "users"
+  add_foreign_key "races", "users"
 end
