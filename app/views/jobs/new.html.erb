@@ -8,7 +8,7 @@
     <%= f.text_area :description %>
 
     <%= f.label :amount %>
-    <%= f.text_field number_to_currency(:amount)%>
+    <%= f.number_field :amount%>
     
     <%= f.submit %>
 <% end %>

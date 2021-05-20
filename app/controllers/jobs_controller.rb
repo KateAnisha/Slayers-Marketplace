@@ -1,4 +1,7 @@
 class JobsController < ApplicationController
+    def index
+    end
+    
     def show
         @job = Job.find(params[:id])
     end
@@ -7,7 +10,8 @@ class JobsController < ApplicationController
     end
     
     def create
-        @job = Job.new(params[:job])
+        @job = Job.new(job_params)
+        @job.user_id = current_user.id
         @job.save
         redirect_to @job
     end
