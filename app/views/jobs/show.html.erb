@@ -2,13 +2,13 @@
 <!-- View for individual job pages -->
 
 <h1><%= @job.title %></h1>
+
 <p>
     <%= @job.description%>
     <%= @job.amount%>
 </p>
-<p>
-    Hunt created by: <%= @job.user.first_name %>
-</p>
+
+<p> Hunt created by: <%= @job.user.first_name %></p>
 
 <%= link_to "Edit", edit_job_path(@job) %>
 <%= link_to "Delete", job_path(@job),  

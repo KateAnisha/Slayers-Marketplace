@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
 
-    def foo
-    end
     include Pundit
     before_action :authenticate_user!
     # rescue_from Pundit: NotAuthorizedError, with: :forbidden

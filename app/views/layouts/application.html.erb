@@ -15,17 +15,28 @@
     <%= link_to "Home", home_path %>
     <%= link_to "Create Hunt", new_job_path %>
     <%= link_to "View Hunts", jobs_path %>
-    <%= link_to "Slayers", slayerz_index_path %>
+    <%= link_to "Slayerz", slayerz_index_path %>
     
-    <% if current_user %>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% if user_signed_in? %>
+      <%= current_user.email %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
       <%= link_to "Account", edit_user_registration_path %>
     <% else %> 
       <%= link_to "Sign up", new_user_registration_path %>
       <%= link_to "Sign in", new_user_session_path %>
     <% end%>
+    
+
   </nav>
-  
+
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+
+  <% if notice %>
+    <p class="alert"><%= alert %></p>
+  <% end %>
+
   <body>
     <div class="container">
       <%= yield %>

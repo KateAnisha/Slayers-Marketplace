@@ -1,9 +1,4 @@
 class JobsController < ApplicationController
-    def home
-        # get all jobs
-        # get all slayers
-        # anything else you want
-    end
 
     def index
         @jobs = Job.all

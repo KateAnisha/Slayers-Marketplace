@@ -1,6 +1,10 @@
 class SlayerzController < ApplicationController
     before_action :authenticate_user!, only: [:create, :edit, :destroy]
-    
+    def home
+        @users = User.all
+        @jobs = Job.all
+    end
+
     def index
         @users = User.all
     end
