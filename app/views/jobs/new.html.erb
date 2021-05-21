@@ -1,6 +1,12 @@
 <h1>Create a job</h1>
 
 <%= form_for :job, url: jobs_path do |f|%>
+    <% if @job.errors.any? %>
+        <% @job.errors.full_messages.each do |msg|%>
+            <%= msg %>
+        <% end %>
+    <% end %>
+
     <%= f.label :title %>
     <%= f.text_field :title %>
 
