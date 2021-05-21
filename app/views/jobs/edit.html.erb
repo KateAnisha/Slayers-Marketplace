@@ -1,6 +1,6 @@
-<h1>Create a job</h1>
+<h1>edit job</h1>
 
-<%= form_for :job, url: jobs_path do |f|%>
+<%= form_for :job, url: job_path(@job), method: :patch do |f|%>
 
     <%= f.label :title %>
     <%= f.text_field :title %>

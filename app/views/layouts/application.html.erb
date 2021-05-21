@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Slayer</title>
+    <title>Slayerz - Find and hire demons to help you with a problem.</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,11 +9,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
- 
+  <!-- Main navigation -->
   <nav>
     <div class="logo">Slayerz</div>
     <%= link_to "Home", home_path %>
-    <%= link_to "Create Job", new_job_path %>
+    <%= link_to "Create Hunt", new_job_path %>
     <% if current_user %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
       <%= link_to "Account", edit_user_registration_path %>
@@ -21,7 +21,6 @@
       <%= link_to "Sign up", new_user_registration_path %>
       <%= link_to "Sign in", new_user_session_path %>
     <% end%>
-    
   </nav>
   
   <body>

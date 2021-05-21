@@ -1,7 +1,11 @@
-<h1>test</h1>
 
-<%= @job.title %>
+<!-- View for individual job pages -->
+
+<h1><%= @job.title %></h1>
 <h2><%= @job.description%></h2>
 <h2><%= @job.amount%></h2>
 
-<%= link_to "back", :back %>
+<%= link_to "Edit", edit_job_path(@job) %>
+<%= link_to "Delete", job_path(@job),  
+    method: :delete,
+    data: {confirm: "Are you sure you want to remove the job?"} %>
