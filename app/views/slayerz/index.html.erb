@@ -1,13 +1,8 @@
 
 <h1>Hire a slayer</h1>
 
-<h2>Recent jobs</h2>
+<h2>all slayers</h2>
 
-<% @jobs.each do |job| %>
-    <p>
-        <%= job.title%>
-        <%= job.description%>
-        <%= job.amount%>
-        <%= link_to 'View hunt', job_path(job)%>
-    </p>
+<% @users.each do |user| %>
+    <p>slayer data here</p>
 <%end%>

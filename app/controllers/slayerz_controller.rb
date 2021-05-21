@@ -2,7 +2,7 @@ class SlayerzController < ApplicationController
     before_action :authenticate_user!, only: [:create, :edit, :destroy]
     
     def index
-        @jobs = Job.all
+        @users = User.all
     end
 
     def show
