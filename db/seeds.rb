@@ -11,17 +11,17 @@ User.destroy_all
 
     user1 = User.create(
         username: "User1",
-        first_name: "Potato",
-        last_name: "Salad",
-        email: "goof@ezy.com",
+        first_name: "Sir",
+        last_name: "Weakling",
+        email: "weakling@slayerz111.com",
         password: "123456",
     )
 
-   user2 = User.create(
+    user2 = User.create(
         username: "user5",
-        first_name: "Carrot",
-        last_name: "Leaf",
-        email: "lolly@ezy.com",
+        first_name: "Demon",
+        last_name: "Slayer",
+        email: "slayer@slayerz111.com",
         password: "123456",
         )
 
