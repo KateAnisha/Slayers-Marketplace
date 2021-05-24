@@ -13,12 +13,11 @@ class SlayerzController < ApplicationController
 
     # Show individual slayer page with 
     def show
-        @users = User.find(params[:id])
+        @user = User.find(params[:id])
     end
 
     # Create slayer profile
     def create
-        @users = User.all
     end
 
     def turn_into_slayer

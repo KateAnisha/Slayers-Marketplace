@@ -3,9 +3,10 @@
 
 <h2>all slayers</h2>
 
-<% @users.each do |user| %>
-    <p>
-        <%= user.first_name%>
-        
-    </p>
-<%end%>
+
+    <% @users.each do |user| %>
+        <p>
+            <%= user.first_name%>
+            <%= link_to 'View more', slayerz_path(user)%>
+        </p>
+    <% end %>
