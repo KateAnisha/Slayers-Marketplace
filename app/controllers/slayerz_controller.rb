@@ -8,7 +8,9 @@ class SlayerzController < ApplicationController
 
     # Slayers index page, displaying all slayers for users to browse and message directly.
     def index
-        @users = User.all
+        slayer_role = Roles.find_by(name: 'slayer')
+        @users = slayer_role.users
+        # @users = User.where(has_role? :slayer)
     end
 
     # Show individual slayer page with 

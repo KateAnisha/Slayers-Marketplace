@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   rolify :role_cname => 'Roles'
+  has_many :jobs, dependent: :destroy
+  has_one :race
+  has_one :role
   validates :username, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
