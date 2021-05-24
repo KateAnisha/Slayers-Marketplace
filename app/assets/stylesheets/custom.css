@@ -1,0 +1,24 @@
+@font-face {
+    font-family: Slayerz-font;
+    src: url("/../fonts/Martyric_PersonalUse.ttf");
+}
+
+body {
+    background-color: #0d101b;
+    color: #cabfcc;
+}
+
+nav {
+    background-color: #171f35;
+    height: 140px;
+}
+
+.logo {
+    font: Slayerz-font;
+    color: #a82b39;
+    font-size: 4em;
+}
+
+.bg-light {
+    background-color: aquamarine;
+}
