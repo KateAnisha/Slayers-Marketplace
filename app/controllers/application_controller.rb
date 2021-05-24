@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
+    before_action :authenticate_user!, except: [:index, :show]
     include Pundit
-    before_action :authenticate_user!
     # rescue_from Pundit: NotAuthorizedError, with: :forbidden
 
     private

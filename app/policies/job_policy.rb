@@ -1,4 +1,4 @@
-class ApplicationPolicy
+class JobPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
@@ -15,7 +15,7 @@ class ApplicationPolicy
   end
 
   def create?
-    false
+    !user.has_role? :slayer
   end
 
   def new?
