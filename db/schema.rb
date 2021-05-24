@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_20_052141) do
+ActiveRecord::Schema.define(version: 2021_05_24_065028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,16 @@ ActiveRecord::Schema.define(version: 2021_05_20_052141) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
   end
 
+  create_table "slayer_infos", force: :cascade do |t|
+    t.string "weapon"
+    t.string "race"
+    t.text "biography"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_slayer_infos_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -72,4 +82,5 @@ ActiveRecord::Schema.define(version: 2021_05_20_052141) do
 
   add_foreign_key "jobs", "users"
   add_foreign_key "races", "users"
+  add_foreign_key "slayer_infos", "users"
 end

@@ -6,6 +6,6 @@
 <% @users.each do |user| %>
     <p>
         <%= user.first_name%>
-        <%# <%= link_to 'View more', slayerz_path(user.slayer.id)%> %>
+        <%= link_to 'View more', slayerz_path(user.slayer_info.id) %>
     </p>
 <% end %>

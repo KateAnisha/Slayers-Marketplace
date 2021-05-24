@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :jobs, dependent: :destroy
   has_one :race
   has_one :role
+  has_one :slayer_info
   validates :username, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
