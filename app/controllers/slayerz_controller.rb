@@ -25,6 +25,7 @@ class SlayerzController < ApplicationController
 
     def turn_into_slayer
         current_user.add_role :slayer
+        SlayerInfo.create(user_id: current_user.id )
         redirect_to home_path
     end
 end

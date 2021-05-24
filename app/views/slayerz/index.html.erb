@@ -3,9 +3,13 @@
 
 <h2>all slayers</h2>
 
+<% p @users.count %>
+<% p SlayerInfo.count %>
+
 <% @users.each do |user| %>
     <p>
         <%= user.first_name%>
+        <% p user.slayer_info %>
         <%= link_to 'View more', slayerz_path(user.slayer_info.id) %>
     </p>
 <% end %>
