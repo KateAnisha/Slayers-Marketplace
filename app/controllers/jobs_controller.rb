@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-
+    before_action :check_auth, except: [:index, :show]
+    
     def index
         @jobs = Job.all
     end
@@ -15,7 +16,6 @@ class JobsController < ApplicationController
     #Create new job and save job, redirect to jobs page
     def create
         @job = Job.new(job_params)
-        authorize @job 
         
         @job.user_id = current_user.id
         if (@job.save)
@@ -25,6 +25,7 @@ class JobsController < ApplicationController
         end
     end
 
+    # Get job ID with params and edit job
     def edit
         @job = Job.find(params[:id])
     end
@@ -40,6 +41,7 @@ class JobsController < ApplicationController
         end
     end
 
+    #Get job by job ID and destroy job
     def destroy
         @job = Job.find(params[:id])
         @job.destroy
@@ -47,6 +49,11 @@ class JobsController < ApplicationController
         redirect_to jobs_path
     end
 
+    def check_auth
+        authorize Job
+    end
+
+    # Authorise creation of job 
     private
     def job_params
         params.require(:job).permit(:title, :description, :amount)
