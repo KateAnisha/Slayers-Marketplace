@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Job.destroy_all
-User.destroy_all
 Race.destroy_all
+SlayerInfo.destroy_all
+User.destroy_all
 
     user1 = User.create(
         username: "User1",

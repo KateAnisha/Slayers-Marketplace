@@ -55,12 +55,6 @@
 <%= link_to "Back", :back %>
 
 <% if current_user.has_role? :slayer %>
-  <%= form_for :slayer do |f|%>
-    <%= f.label :bio %>
-    <%= f.text_field :bio%>
-
-    <%= f.label :weapon %>
-    <%= f.text_field :weapon%>
-  <% end %>
+    <p><%= button_to "Create Slayer Profile!", new_slayer_path, method: :post %></p>
 <% end %>
 

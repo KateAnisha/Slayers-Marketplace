@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root to: 'slayerz#home', as: 'home'
   resources :slayerz, :jobs
   post '/slayerz/become_slayer', to: 'slayerz#turn_into_slayer', as: 'new_slayer'
+  
 
 end

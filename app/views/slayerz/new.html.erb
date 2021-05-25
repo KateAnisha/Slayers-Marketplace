@@ -4,9 +4,11 @@
     <%= f.label :weapon %>
     <%= f.text_field :weapon%>
 
-    <%= f.label :bio %>
-    <%= f.text_area :bio%>
+    <%= f.label :biography %>
+    <%= f.text_area :biography%>
 
-    <%= f.label :race %>
-    <%= f.collection_select :race, @races, :id, :name %>
+    <%# <%= f.label :race %>
+    <%# <%= f.collection_select :race, @races, :id, :race_name %>
+
+    <%= f.submit %>
 <% end %>

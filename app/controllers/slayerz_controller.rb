@@ -22,10 +22,10 @@ class SlayerzController < ApplicationController
     # Create slayer profile
     def create
         @profile = SlayerInfo.new(profile_params)
-        @race = Race.new(race_params)
+        # @race = Race.new(race_params)
         @profile.user_id = current_user.id
         if (@profile.save)
-            redirect_to @profile
+            redirect_to slayerz_path(@profile.user)
         else
             render 'new'
         end
@@ -39,6 +39,6 @@ class SlayerzController < ApplicationController
 
     private
     def profile_params
-        params.require(:profile).permit(:weapon, :race, :biography)
+        params.require(:slayer_info).permit(:weapon, :biography)
     end
 end

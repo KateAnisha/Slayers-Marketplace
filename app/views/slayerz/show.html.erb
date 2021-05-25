@@ -2,10 +2,11 @@
 
 
 <!-- View for individual slayer profiles -->
-
+<% raise %>
 <p><%= @user.first_name %></p>
-<p><%= @user.slayer_info %></p>
-<p><%= @user.bio %></p>
+<p><%= @user.slayer_info.weapon %></p>
+<p><%= @user.slayer_info.race %></p>
+<p><%= @user.slayer_info.biography %></p>
 
 
 
