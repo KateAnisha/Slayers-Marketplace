@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: Slayerz-font;
-    src: url("/../fonts/Martyric_PersonalUse.ttf");
+    src: url(font-path("Martyric_PersonalUse.ttf"));
 }
 
 body {
@@ -17,8 +17,9 @@ nav {
     height: 140px;
 }
 
-.logo {
-    font: Slayerz-font;
+h1 {
+    font-family: Slayerz-font;
     color: #a82b39;
     font-size: 4em;
+    letter-spacing: 5px;
 }
