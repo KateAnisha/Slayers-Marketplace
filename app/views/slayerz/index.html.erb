@@ -7,6 +7,6 @@
     <p>
         <%= user.first_name%>
         <% user.slayer_info %>
-        <%= link_to 'View more', slayerz_path(user) %>
+        <%= link_to 'View more', slayerz_path(user.slayer_info) %>
     </p>
 <% end %>

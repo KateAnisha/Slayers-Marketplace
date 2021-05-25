@@ -16,16 +16,16 @@ class SlayerzController < ApplicationController
 
     # Show individual slayer page with 
     def show
-        @user = User.find(params[:id])
+        @slayer = SlayerInfo.find(params[:id])
     end
 
     # Create slayer profile
     def create
-        @profile = SlayerInfo.new(profile_params)
+        @slayer_info = SlayerInfo.find_by(user_id: current_user.id)
+        @slayer_info.update(profile_params)
         # @race = Race.new(race_params)
-        @profile.user_id = current_user.id
-        if (@profile.save)
-            redirect_to slayerz_path(@profile.user)
+        if (@slayer_info.save)
+            redirect_to slayerz_path(@slayer_info)
         else
             render 'new'
         end
