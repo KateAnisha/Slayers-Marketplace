@@ -21,11 +21,24 @@ class SlayerzController < ApplicationController
 
     # Create slayer profile
     def create
+        @profile = SlayerInfo.new(profile_params)
+
+        @profile.user_id = current_user.id
+        if (@profile.save)
+            redirect_to @profile
+        else
+            render 'new'
+        end
     end
 
     def turn_into_slayer
         current_user.add_role :slayer
         SlayerInfo.create(user_id: current_user.id )
-        redirect_to home_path
+        redirect_to new_path
+    end
+
+    private
+    def profile_params
+        params.require(:profile).permit(:weapon, :race, :biography)
     end
 end
