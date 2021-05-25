@@ -37,6 +37,17 @@
     <p class="alert"><%= alert %></p>
   <% end %>
 
+  <% if flash[:errors] %>
+    <section class="errors">
+      <p class="title">The following errors occured:</p>
+      <ul>
+      <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+      </ul>
+    </section>
+  <% end %>
+
   <body>
     <div class="container">
       <%= yield %>

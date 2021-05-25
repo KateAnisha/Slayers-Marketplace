@@ -1,5 +1,12 @@
-<%= form_with @user do |f| %>
+<H1>Slayer profile</H1>
+
+<%= form_for :slayer_info, url: slayerz_index_path do |f| %>
+    <%= f.label :weapon %>
     <%= f.text_field :weapon%>
+
+    <%= f.label :bio %>
     <%= f.text_area :bio%>
-    <%= f.collection_select :bio%>
+
+    <%= f.label :race %>
+    <%= f.collection_select :race, @races, :id, :name %>
 <% end %>

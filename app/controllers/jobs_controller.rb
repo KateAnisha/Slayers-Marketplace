@@ -21,8 +21,11 @@ class JobsController < ApplicationController
         if (@job.save)
             redirect_to @job
         else 
-            render 'new'
+            flash.now[:errors] = @job.errors.full_messages
+            render action: 'new'
         end
+
+        
     end
 
     # Get job ID with params and edit job

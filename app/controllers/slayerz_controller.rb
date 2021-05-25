@@ -22,7 +22,7 @@ class SlayerzController < ApplicationController
     # Create slayer profile
     def create
         @profile = SlayerInfo.new(profile_params)
-
+        @race = Race.new(race_params)
         @profile.user_id = current_user.id
         if (@profile.save)
             redirect_to @profile
@@ -34,7 +34,7 @@ class SlayerzController < ApplicationController
     def turn_into_slayer
         current_user.add_role :slayer
         SlayerInfo.create(user_id: current_user.id )
-        redirect_to new_path
+        redirect_to new_slayerz_path
     end
 
     private
