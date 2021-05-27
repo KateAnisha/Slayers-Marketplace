@@ -31,6 +31,21 @@ class SlayerzController < ApplicationController
         end
     end
 
+    def edit
+        @slayer_info = SlayerInfo.find(params[:id])
+    end
+
+    def update
+        @slayer_info = SlayerInfo.find(params[:id])
+        
+        if @slayer_info.user_id = current_user.id
+            (@slayer_info.update(profile_params))
+            redirect_to slayerz_path(@slayer_info)
+        else 
+            render 'edit'
+        end
+    end
+
     def turn_into_slayer
         current_user.add_role :slayer
         SlayerInfo.create(user_id: current_user.id )
