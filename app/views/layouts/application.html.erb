@@ -14,8 +14,12 @@
   <h1>Slayerz</h1>
     <%# <div class="logo"></div> %>
     <%= link_to "Home", home_path %>
-    <%= link_to "Create Hunt", new_job_path %>
+    <% if user_signed_in? %>
+      <% if !current_user.has_role? :slayer%>
+        <%= link_to "Create Hunt", new_job_path %>
+      <% end %>
     <%= link_to "View Hunts", jobs_path %>
+    <% end %>
     <%= link_to "Slayerz", slayerz_index_path %>
     
     <% if user_signed_in? %>

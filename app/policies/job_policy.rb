@@ -11,12 +11,7 @@ class JobPolicy
   end
 
   def show?
-    if user
-      return true
-    else
-      return false
-    end
-    # !!user
+    !!user
   end
 
   def create?
