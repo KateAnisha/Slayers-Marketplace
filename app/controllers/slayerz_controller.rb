@@ -57,6 +57,8 @@ class SlayerzController < ApplicationController
 
     private
     def profile_params
-        params.require(:slayer_info).permit(:weapon, :biography)
+        params.require(:slayer_info).permit(:weapon, :biography, :profile_image)
     end
+
+
 end

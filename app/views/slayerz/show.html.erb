@@ -2,6 +2,9 @@
 
 
 <!-- View for individual slayer profiles -->
+<% if @slayer.profile_image.attached?%>
+    <p><%= cl_image_tag @slayer.profile_image.key, crop: :scale, width: 250, cloud_name: 'kate-anisha' %></p>
+<% end %>
 <p><%= @slayer.user.first_name %></p>
 <p><%= @slayer.weapon %></p>
 <p><%= @slayer.race %></p>
