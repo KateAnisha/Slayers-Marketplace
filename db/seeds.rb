@@ -10,7 +10,7 @@ Job.destroy_all
 Race.destroy_all
 SlayerInfo.destroy_all
 User.destroy_all
-Role.create
+Roles.create
 user2.add_role :slayer
 
     user1 = User.create(
