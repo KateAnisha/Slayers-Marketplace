@@ -23,19 +23,21 @@ class SlayerzController < ApplicationController
     def create
         @slayer_info = SlayerInfo.find_by(user_id: current_user.id)
         if @slayer_info
-            @slayer_info.update(profile_params)
-            redirect_to slayerz_path(@slayer_info)
+            if @slayer_info.update(profile_params)
+                redirect_to slayerz_path(@slayer_info)
+            else
+                render 'new'
+            end
         else
             @slayer_info = SlayerInfo.new(profile_params)
             @slayer_info.user_id = current_user.id
+            if (@slayer_info.save!)
+                redirect_to slayerz_path(@slayer_info)
+            else
+                render 'new'
+            end
         end
-
         # @race = Race.new(race_params)
-        if (@slayer_info.save!)
-            redirect_to slayerz_path(@slayer_info)
-        else
-            render 'new'
-        end
     end
 
     def edit
