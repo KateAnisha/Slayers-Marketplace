@@ -54,10 +54,10 @@
 
 <%= link_to "Back", :back %>
 
-<% if current_user.has_role? :slayer %>
+<% if current_user.has_role?(:slayer) && @user.slayer_info %>
     <p><%= link_to "Edit Slayer Profile!", edit_slayerz_path(@user.slayer_info)%></p>
-<%# <% else %>
-    <%# <p><%= button_to "Create Slayer Profile!", new_slayer_path, method: :post %></p>
+<% else %>
+    <p><%= button_to "Create Slayer Profile!", new_slayer_path, method: :post %></p>
 <% end %>
 
 

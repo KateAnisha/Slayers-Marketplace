@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Job.destroy_all
-Race.destroy_all
+# Race.destroy_all
 SlayerInfo.destroy_all
 User.destroy_all
 Roles.destroy_all
@@ -38,13 +38,14 @@ user3 = User.create!(
 user2.add_role :slayer
 
 
-demon = Race.create!(race_name: "Demon")
-vampire = Race.create!(race_name: "Vampire")
-orc = Race.create!(race_name: "Orc")
-witch = Race.create!(race_name: "Witch")
-human = Race.create!(race_name: "Super Human")
+# demon = Race.create!(race_name: "Demon")
+# vampire = Race.create!(race_name: "Vampire")
+# orc = Race.create!(race_name: "Orc")
+# witch = Race.create!(race_name: "Witch")
+# human = Race.create!(race_name: "Super Human")
 
-SlayerInfo.create!(weapon: "test", biography: "test test test", user: user2, race: demon)
+SlayerInfo.create!(weapon: "test", biography: "test test test", user: user2)
+    # , race: demon)
 
 Job.create!(title: "Snake invasion", description: "Remove infestation of snakes from my house", amount: 150.00, user: user1)
 Job.create!(title: "Kill a vampire", description: "Kill the notorious vampire Xenos for me", amount: 300.00, user: user3)
