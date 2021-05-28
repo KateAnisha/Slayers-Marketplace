@@ -10,11 +10,13 @@ Job.destroy_all
 Race.destroy_all
 SlayerInfo.destroy_all
 User.destroy_all
+Role.create
+user2.add_role :slayer
 
     user1 = User.create(
         username: "User1",
         first_name: "Paul",
-        last_name: "Middle",
+        last_name: "Smith",
         email: "weakling@slayerz111.com",
         password: "123456",
     )

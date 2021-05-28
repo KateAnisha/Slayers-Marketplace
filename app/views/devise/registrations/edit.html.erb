@@ -55,11 +55,9 @@
 <%= link_to "Back", :back %>
 
 <% if current_user.has_role? :slayer %>
-   <% if @user.slayer_info(:biography).empty? %>
-    <p><%= button_to "Create Slayer Profile!", new_slayer_path, method: :post %></p>
-  <%# else %>
     <p><%= link_to "Edit Slayer Profile!", edit_slayerz_path(@user.slayer_info)%></p>
-    <%# end %>
+<%# <% else %> %>
+    <%# <p><%= button_to "Create Slayer Profile!", new_slayer_path, method: :post %></p> %>
 <% end %>
 
 
