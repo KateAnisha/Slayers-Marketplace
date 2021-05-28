@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   rolify :role_cname => 'Roles'
   has_many :jobs, dependent: :destroy
-  has_one :race
   has_one :role
   has_one :slayer_info, dependent: :destroy
   validates :username, presence: true

@@ -1,3 +1,3 @@
 class Race < ApplicationRecord
-  belongs_to :user
+  has_many :slayer_info, dependent: :destroy
 end
