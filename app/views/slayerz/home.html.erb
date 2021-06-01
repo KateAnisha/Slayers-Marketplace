@@ -9,9 +9,9 @@
 
 <% @users.each do |user| %>
     <p>
-        <%= user.first_name%>
-        <% user.slayer_info %>
-        <%= link_to 'View more', slayerz_path(user.slayer_info) %>
+    <%= user.first_name%>
+    <% user.slayer_info %>
+    <%= link_to 'View more', slayerz_path(user.slayer_info) %>
     </p>
 <% end %>
 
