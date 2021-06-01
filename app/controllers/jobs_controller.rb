@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
     before_action :check_auth, except: [:index]
     
+    # Display all jobs
     def index
         @jobs = Job.all
     end
@@ -8,6 +9,7 @@ class JobsController < ApplicationController
     # Get job by ID and display individual job view to the user
     def show
         @job = Job.find(params[:id])
+        @current_job = Job.find(params[:id])
     end
 
     def new
@@ -42,7 +44,7 @@ class JobsController < ApplicationController
         end
     end
 
-    #Get job by job ID and destroy job
+    # Destroy job
     def destroy
         @job = Job.find(params[:id])
         @job.destroy
@@ -54,9 +56,22 @@ class JobsController < ApplicationController
         authorize Job
     end
 
+    def accepted_job
+        @current_job = Job.find(params[:id])
+        
+        if @current_job.accepted == nil
+            (@current_job.update(current_user.first_name))
+            redirect_to home_path
+        end
+    end
+
     # Authorise creation of job 
     private
     def job_params
-        params.require(:job).permit(:title, :description, :amount)
+        params.require(:job).permit(:title, :description, :amount, :accepted)
+    end
+
+    def accepted_job_params
+        params.require(:job).permit(:accepted)
     end
 end

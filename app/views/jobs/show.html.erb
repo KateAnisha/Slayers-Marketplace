@@ -10,8 +10,11 @@
 
 <p> Hunt created by: <%= @job.user.first_name %></p>
 
+
+
 <% if current_user.has_role? :slayer %>
-    <%= link_to "Accept Hunt", edit_job_path(@job) %>
+    <p>hello</p>
+    <%= link_to "Accept Hunt", accepted_job_path(@job) %>
 <% else current_user %>
     <%= link_to "Edit", edit_job_path(@job) %>
     <%= link_to "Delete", job_path(@job),  
