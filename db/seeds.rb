@@ -50,9 +50,4 @@ SlayerInfo.create!(weapon: "test", biography: "test test test", user: user2)
 Job.create!(title: "Snake invasion", description: "Remove infestation of snakes from my house", amount: 150.00, user: user1)
 Job.create!(title: "Kill a vampire", description: "Kill the notorious vampire Xenos for me", amount: 300.00, user: user3)
 
-p "Users should be 3. Is: #{User.count}" 
-p "Races should be 5. Is: #{Race.count}" 
-p "Job should be 2. Is: #{Job.count}" 
-
-p "Slayer should be 1. Is: #{SlayerInfo.count}" 
 

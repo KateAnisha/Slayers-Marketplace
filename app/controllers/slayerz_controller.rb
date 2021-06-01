@@ -4,6 +4,9 @@ class SlayerzController < ApplicationController
     # Application home page
     def home
         @users = User.all
+        slayer_role = Roles.find_by(name: 'slayer')
+        @users = slayer_role.users
+        
         @jobs = Job.all
     end
 
