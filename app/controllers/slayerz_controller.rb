@@ -38,6 +38,7 @@ class SlayerzController < ApplicationController
             end
         end
         # @race = Race.new(race_params)
+
     end
 
     def edit
