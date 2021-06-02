@@ -10,31 +10,27 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <!-- Main navigation -->
-  <nav>
+  <header>
   <h1>Slayerz</h1>
-    <%# <div class="logo"></div> %>
-    <%= link_to "Home", home_path %>
-    <% if user_signed_in? %>
-      <% if !current_user.has_role? :slayer%>
-        <%= link_to "Create Hunt", new_job_path %>
-      <% end %>
-    <%= link_to "View Hunts", jobs_path %>
-    <% end %>
-    <%= link_to "Slayerz", slayerz_index_path %>
-    
-    <% if user_signed_in? %>
-      <%= current_user.first_name %>
-      <%= link_to "Account", edit_user_registration_path %>
-      <%= link_to "Messages", conversations_path%>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %> 
-      <%= link_to "Sign up", new_user_registration_path %>
-      <%= link_to "Sign in", new_user_session_path %>
-    <% end%>
-    
-
+  <% if user_signed_in? %>
+  <nav>
+    <div class="nav-area">
+        <%= link_to "Home", home_path %>
+          <% if !current_user.has_role? :slayer%>
+            <%= link_to "Create Hunt", new_job_path %>
+          <% end %>
+        <%= link_to "View Hunts", jobs_path %>
+        <%= link_to "Slayerz", slayerz_index_path %>
+        <%= link_to "Account", edit_user_registration_path %>
+        <%= link_to "Messages", conversations_path%>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    </div>
   </nav>
+  <% end%>
+        
+  </header>
 
+  <body>
   <% if notice %>
     <p class="notice"><%= notice %></p>
   <% end %>
@@ -54,9 +50,14 @@
     </section>
   <% end %>
 
-  <body>
-    <div class="container">
-      <%= yield %>
-    </div>
+  <main>
+    <%= yield %>
+  </main>
+  <% if user_signed_in? %>
+
+  <footer>
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quo esse quis quod reprehenderit cumque consequatur aspernatur iste ut placeat voluptatibus a, necessitatibus odio ipsum, magni maiores delectus dolorum hic.
+  </footer>
   </body>
+  <% end %>
 </html>

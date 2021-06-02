@@ -1,17 +1,41 @@
-<h1>Slayers and demons</h1>
+<section class="hero">
 
-<% @jobs.each do |job| %>
-    <p><%= job.title%></p>
-    <p><%= job.description%></p>
-    <p><%= job.amount%></p>
-    <%= link_to 'View more', job_path(job)%>
-<% end %> 
+  <h2>Welcome to Slayerz!</h2>
+    <p>Slayerz is an online marketplace for weaklings and demons to connect and help each other. </p>
 
-<% @users.each do |user| %>
-    <p>
-    <%= user.first_name%>
-    <% user.slayer_info %>
-    <%= link_to 'View more', slayerz_path(user.slayer_info) %>
-    </p>
+    <% if user_signed_in? %>
+        
+    <% else %>
+        <div class="btn-container">
+                <%= link_to "Login", new_user_session_path, class: "btn-full" %>
+                <%= link_to "Register", new_user_registration_path, class: "btn-empty"%>
+        </div>
+    <% end %>
+</section>
+
+<% if user_signed_in? %>
+<h2>Available hunts</h2>
+
+<section class="jobs">
+    <div class="job-card">
+        <% @jobs.each do |job| %>
+            <p><%= job.title%></p>
+            <p><%= job.description%></p>
+            <p><%= job.amount%></p>
+            <%= link_to 'View more', job_path(job)%>
+        <% end %> 
+    </div>
+</section>
+
+<section class="slayers">
+    <% @users.each do |user| %>
+        <p>
+        <%= user.first_name%>
+        <% user.slayer_info %>
+        <%= link_to 'View more', slayerz_path(user.slayer_info) %>
+        </p>
+    <% end %>
+</section>
+
 <% end %>
 
