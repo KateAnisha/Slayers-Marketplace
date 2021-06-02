@@ -56,7 +56,6 @@ h1 {
 /* Hero heading h2 */
 
 
-
 /* Main content headings */
 
 h3 {
@@ -151,7 +150,6 @@ a.btn-full:hover, a.btn-empty:hover {
 
 .job-container {
     width: 100%;
- 
     
 }
 
@@ -182,7 +180,35 @@ a.btn-full:hover, a.btn-empty:hover {
     margin: 22px;
     background-color: #200108;
     padding: 22px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 }
+
+.inner-job > a{
+    border: 2px solid #3c020f;
+    background-color: #15040a;
+    opacity: 0.6;
+    /* background-color: #15040a; */
+    width: 160px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c9b4b8;
+    text-decoration: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 42px;
+}
+
+.inner-job > a:hover {
+    background-color: #3c020f;
+    transform: scale(-1, 1);
+    opacity: 1;
+}
+
+
 
 .slayers {
     grid-area: slayers;
