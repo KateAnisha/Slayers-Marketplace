@@ -1,15 +1,13 @@
-<h1>individual  slayerz page</h1>
+<h3><%= @slayer.user.first_name %></h3>
 
 
 <!-- View for individual slayer profiles -->
 <% if @slayer.profile_image.attached?%>
     <p><%= cl_image_tag @slayer.profile_image.key, crop: :scale, width: 250, cloud_name: 'kate-anisha' %></p>
 <% end %>
-<p><%= @slayer.user.first_name %></p>
-<p><%= @slayer.weapon %></p>
-<p><%= @slayer.race %></p>
-<%# <p><%= @slayer.race.race_name %></p> %>
-<p><%= @slayer.biography %></p>
+<p>Name: <%= @slayer.user.first_name %></p>
+<p>Weapon: <%= @slayer.weapon %></p>
+<p>Biography: <%= @slayer.biography %></p>
 
 
 
