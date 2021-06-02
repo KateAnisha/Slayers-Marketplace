@@ -13,7 +13,7 @@
 <p> Hunt created by: <%= @job.user.first_name %></p>
 
 <% if @job.accepted %>
-    <p> Hunt accepted by: <%= @job.accepted %></p>
+    <p> Sorry! This hunt is no longer available. It was accepted by <%= @job.accepted %></p>
     <% else %>
     <p>This Hunt is still available! Accept it now.</p>
 <%end %>
