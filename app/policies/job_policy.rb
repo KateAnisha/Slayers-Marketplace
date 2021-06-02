@@ -28,7 +28,7 @@ class JobPolicy
   end
 
   def edit?
-    true
+    !user.has_role? :slayer
   end
 
   def destroy?

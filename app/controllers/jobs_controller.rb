@@ -1,13 +1,10 @@
 class JobsController < ApplicationController
     before_action :check_auth, except: [:index]
     
-    # Display all jobs
+    # Display all unaccepted jobs
     def index
         @jobs = Job.all
-        available_jobs = Jobs.find_by(accepted: nil)
-        if available_jobs.accepted == nil
-            return Job.all
-        end
+        
     end
     
     # Get job by ID and display individual job view to the user

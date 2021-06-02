@@ -9,13 +9,18 @@
 </p>
 
 <p> Hunt created by: <%= @job.user.first_name %></p>
-<p> Hunt accepted by: <%= @job.accepted %></p>
+
+<% if @job.accepted %>
+    <p> Hunt accepted by: <%= @job.accepted %></p>
+    <% else %>
+    <p>This Hunt is still available! Accept it now.</p>
+<%end %>
 
 
 
-<% if current_user.has_role? :slayer %>
+<% if current_user.has_role?(:slayer) && @job.accepted == nil %>
     <%= link_to "Accept Hunt", accepted_path, method: :patch %>
-<% else current_user %>
+<% elsif !current_user.has_role?(:slayer) %>
     <%= link_to "Edit", edit_job_path(@job) %>
     <%= link_to "Delete", job_path(@job),  
         method: :delete,
