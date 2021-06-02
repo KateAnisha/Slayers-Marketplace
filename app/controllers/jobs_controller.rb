@@ -4,7 +4,6 @@ class JobsController < ApplicationController
     # Display all unaccepted jobs
     def index
         @jobs = Job.all
-        
     end
     
     # Get job by ID and display individual job view to the user

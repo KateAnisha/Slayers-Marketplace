@@ -2,6 +2,7 @@
     font-family: Slayerz-font;
     src: url("Martyric_PersonalUse.ttf");
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
     box-sizing: border-box;
@@ -21,6 +22,8 @@ body {
                          "footer footer"
     ;
 }
+
+/* Nabigation */ 
 
 header {
     background-color: #000;
@@ -42,6 +45,7 @@ header {
 
 /* Typography styling */
 
+/* Nav Logo */
 h1 {
     font-family: Slayerz-font;
     color: #720620;
@@ -49,8 +53,29 @@ h1 {
     letter-spacing: 5px;
 }
 
-h2 {
+/* Hero heading h2 */
+
+
+
+/* Main content headings */
+
+h3 {
     margin: 22px 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 3px;
+    margin: 82px 0 62px 0;
+    color: #520616;
+    font-size: 3em;
+}
+
+p {
+    /* color: #630f20; */
+    color: #772a3a;
+}
+
+h4 {
+
 }
 
 /* buttons */
@@ -99,6 +124,10 @@ a.btn-full:hover, a.btn-empty:hover {
     color: #520616;
 }
 
+.btn-container {
+    display: flex;
+ }
+
 /* Page styles */
 
 .hero {
@@ -114,20 +143,45 @@ a.btn-full:hover, a.btn-empty:hover {
     align-items: center;
 }
 
-.btn-container {
-   display: flex;
-}
-
 
 .jobs {
     grid-area: jobs;
-    display: flex;
+   
+}
+
+.job-container {
     width: 100%;
+ 
+    
 }
 
 .job-card {
-    width: 120px;
+    /* width: 120px;
+    margin: 0; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; */
+}
 
+.job-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 22px;
+}
+
+.inner-job {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 330px;
+    margin: 22px;
+    background-color: #200108;
+    padding: 22px;
 }
 
 .slayers {

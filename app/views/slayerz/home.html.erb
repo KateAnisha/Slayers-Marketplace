@@ -1,7 +1,7 @@
 <section class="hero">
 
   <h2>Welcome to Slayerz!</h2>
-    <p>Slayerz is an online marketplace for weaklings and demons to connect and help each other. </p>
+    <h6>Slayerz is an online marketplace for weaklings and demons to connect and help each other. </h6>
 
     <% if user_signed_in? %>
         
@@ -14,18 +14,25 @@
 </section>
 
 <% if user_signed_in? %>
-<h2>Available hunts</h2>
 
 <section class="jobs">
-    <div class="job-card">
-        <% @jobs.each do |job| %>
-            <p><%= job.title%></p>
-            <p><%= job.description%></p>
-            <p><%= job.amount%></p>
-            <%= link_to 'View more', job_path(job)%>
-        <% end %> 
+<h3>Available Hunts</h3>
+    <div class="job-container">
+        <div class="job-card">
+            <div class="job-items">
+                <% @jobs.each do |job| %>
+                    <div class="inner-job">
+                    <h4><%= job.title%></h4>
+                    <p><%= job.description%></p>
+                    <p><%= job.amount%></p>
+                    <%= link_to 'View more', job_path(job)%>
+                    </div>
+                <% end %> 
+            </div>
+        </div>
     </div>
 </section>
+
 
 <section class="slayers">
     <% @users.each do |user| %>
