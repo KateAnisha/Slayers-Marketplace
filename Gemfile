@@ -67,3 +67,5 @@ gem "bcrypt", "~> 3.1"
 
 gem "cloudinary", "~> 1.20"
 gem "activestorage-cloudinary-service", "~> 0.2.3"
+
+gem 'mailboxer'

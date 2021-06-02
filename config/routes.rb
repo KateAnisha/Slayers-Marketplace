@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   resources :slayerz, :jobs
   post '/slayerz/become_slayer', to: 'slayerz#turn_into_slayer', as: 'new_slayer'
   patch '/jobs/:id/accepted_job', to: 'jobs#accepted_job', as: 'accepted'
+
+  resources :conversations do
+    resources :messages
+  end
 end
