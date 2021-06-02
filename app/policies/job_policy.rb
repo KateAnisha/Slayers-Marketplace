@@ -17,9 +17,6 @@ class JobPolicy
   def create?
     # Define policy. If user is a slayer, they will not be able to create, update, edit or destroy jobs
     !user.has_role? :slayer
-
-    # put this in the slayer/create policy
-    # return false if user.slayer_info
   end
 
   def new?  
@@ -36,6 +33,10 @@ class JobPolicy
 
   def destroy?
     !user.has_role? :slayer
+  end
+
+  def accepted_job?
+    user.has_role? :slayer
   end
 
   class Scope

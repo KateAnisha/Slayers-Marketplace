@@ -4,6 +4,10 @@ class JobsController < ApplicationController
     # Display all jobs
     def index
         @jobs = Job.all
+        available_jobs = Jobs.find_by(accepted: nil)
+        if available_jobs.accepted == nil
+            return Job.all
+        end
     end
     
     # Get job by ID and display individual job view to the user
@@ -44,6 +48,17 @@ class JobsController < ApplicationController
         end
     end
 
+    # Enable slayers to accept a job
+
+    def accepted_job
+        @current_job = Job.find(params[:id])
+        
+        if @current_job.accepted == nil
+            @current_job.update(accepted: current_user.first_name)
+            redirect_to jobs_path
+        end
+    end
+
     # Destroy job
     def destroy
         @job = Job.find(params[:id])
@@ -52,17 +67,10 @@ class JobsController < ApplicationController
         redirect_to jobs_path
     end
 
+   
+
     def check_auth
         authorize Job
-    end
-
-    def accepted_job
-        @current_job = Job.find(params[:id])
-        
-        if @current_job.accepted == nil
-            (@current_job.update(current_user.first_name))
-            redirect_to home_path
-        end
     end
 
     # Authorise creation of job 
