@@ -14,7 +14,6 @@ class SlayerzController < ApplicationController
     def index
         slayer_role = Roles.find_by(name: 'slayer')
         @users = slayer_role.users
-        # @users = User.where(has_role? :slayer)
     end
 
     # Show individual slayer page with 

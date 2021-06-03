@@ -1,11 +1,22 @@
-<h1>List of hunts</h1>
+
+<div class="content">
+<p>Choose a hunt from those available below. </p>
+</div>
+   <div class="job-container">
+        <div class="job-card">
+            <div class="job-items">
+                <% @jobs.each do |job| %>
+                    <div class="inner-job">
+                    <h4><%= job.title%></h4>
+                    <p><%= job.description%></p>
+                    <p><%= job.amount%></p>
+                    <%= link_to 'View more', job_path(job)%>
+                    </div>
+                <% end %> 
+            </div>
+        </div>
+    </div>
 
 
-<% @jobs.each do |job| %>
-    <p><%= job.title%></p>
-    <p><%= job.description%></p>
-    <p><%= job.amount%></p>
-    <%= link_to 'View more', job_path(job)%>
-<% end %> 
 
 

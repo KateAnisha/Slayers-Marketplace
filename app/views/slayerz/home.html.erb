@@ -34,14 +34,19 @@
 
 
 <section class="slayers">
+    <%= cl_image_tag @user.profile_image.key, crop: :scale, width: 250, cloud_name: 'kate-anisha' %></p>
+
     <% @users.each do |user| %>
         <p>
+        
         <%= user.first_name%>
         <% user.slayer_info %>
         <%= link_to 'View more', slayerz_path(user.slayer_info) %>
         </p>
     <% end %>
 </section>
+
+
 
 <% end %>
 

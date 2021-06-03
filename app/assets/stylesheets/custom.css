@@ -12,10 +12,10 @@
 
 body {
     background-color: #000;
-    color: #cabfcc;
+    color: #a7888e;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 140px auto auto 120px;
+    grid-template-rows: 180px auto auto 120px;
     grid-template-areas: "header header"
                          "hero hero"
                          "main main"
@@ -32,14 +32,15 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 30px 70px;
+    padding: 42px 70px;
     color: #c9b4b8;
+    margin-top: 12px;
 }
 
 
 .nav-area {
     display: inline-block;
-    padding: 0 15px;
+    padding: 22px 15px;
     text-transform: uppercase;
 }
 
@@ -74,7 +75,7 @@ p {
 }
 
 h4 {
-
+    /* color: #9f4155; */
 }
 
 /* buttons */
@@ -140,8 +141,13 @@ a.btn-full:hover, a.btn-empty:hover {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-top: 32px;
 }
 
+.content {
+    margin: 160px 0 60px 0;
+    text-align: center;
+}
 
 .jobs {
     grid-area: jobs;
@@ -182,10 +188,12 @@ a.btn-full:hover, a.btn-empty:hover {
     padding: 22px;
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
+    text-align: center;
+    
 }
 
 .inner-job > a{
-    border: 2px solid #3c020f;
+    border: 2px solid #520616;
     background-color: #15040a;
     opacity: 0.6;
     /* background-color: #15040a; */
@@ -203,12 +211,11 @@ a.btn-full:hover, a.btn-empty:hover {
 }
 
 .inner-job > a:hover {
-    background-color: #3c020f;
+    background-color: #520616;
     transform: scale(-1, 1);
     opacity: 1;
+    box-shadow: 3px 3px 10px #000;
 }
-
-
 
 .slayers {
     grid-area: slayers;
