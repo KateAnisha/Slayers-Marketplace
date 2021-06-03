@@ -1,8 +1,7 @@
 class ApplicationController < ActionController::Base
     before_action :authenticate_user!, except: [:index, :show]
     before_action :configure_permitted_parameters, if: :devise_controller?
-    before_action :sanitize_devise_params, if: :devise_controller?
-
+  
     include Pundit
 
     # If user is not authorised, rescue with the following 
