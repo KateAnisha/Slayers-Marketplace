@@ -1,6 +1,6 @@
 @font-face {
     font-family: Slayerz-font;
-    src: font_url("assets/fonts/Martyric_PersonalUse.ttf");
+    src: url("Martyric_PersonalUse.ttf");
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
@@ -21,6 +21,7 @@ body {
                          "main main"
                          "footer footer"
     ;
+    height: auto;
 }
 
 /* Nabigation */ 
@@ -48,7 +49,6 @@ header {
 
 /* Nav Logo */
 h1 {
-    
     font-family: Slayerz-font;
     color: #720620;
     font-size: 4em;
@@ -132,7 +132,7 @@ a.btn-full:hover, a.btn-empty:hover {
 /* Page styles */
 
 .hero {
-    background-image: url("../images/slayerz-bg.png");
+    background-image: url("slayerz-bg.png");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -224,6 +224,73 @@ a.btn-full:hover, a.btn-empty:hover {
 
 main {
     grid-area: main;
+}
+
+/* form styling */
+.field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #520616;
+    font-size: 1.2em;
+
+}
+
+.form-control {
+    background-color: #15040a;
+    width: 200px;
+    border: 2px solid #520616;
+
+}
+
+.form-control:focus{
+    background-color: #520616;
+    border: 2px solid #520616;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+.form-text {
+    columns: red;
+}
+
+
+a.submit-btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 3px;
+}
+
+.submit-btn {
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin: 0 5%;
+    border: 3px solid #520616;
+    color: #520616;
+    background-color: #000;
+    
+}
+
+a.submit-btn:hover{
+    color: #c9b4b8;
+    font-weight: bold;
+}
+
+.main-btn {
+    margin-top: 32px;
+}
+
+.actions {
+    margin: 42px 0;
+    padding: 42px 0;
 }
 
 footer {

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+    # Ensure user is logged in before accessing certain views
     before_action :authenticate_user!, except: [:index, :show]
     before_action :configure_permitted_parameters, if: :devise_controller?
   
@@ -14,6 +15,7 @@ class ApplicationController < ActionController::Base
         redirect_to request.referrer || home_path
     end
 
+    # sanitize login 
     protected
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :first_name, :last_name])

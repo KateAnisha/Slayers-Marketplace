@@ -39,14 +39,14 @@ class SlayerzController < ApplicationController
                 render 'new'
             end
         end
-        # @race = Race.new(race_params)
-
     end
 
+    # Edit slayer
     def edit
         @slayer_info = SlayerInfo.find(params[:id])
     end
 
+    # Update slayer information
     def update
         @slayer_info = SlayerInfo.find(params[:id])
         
@@ -58,6 +58,7 @@ class SlayerzController < ApplicationController
         end
     end
 
+    # Enable user to turn into slayer
     def turn_into_slayer
         current_user.add_role :slayer
         if current_user.slayer_info == nil
@@ -66,6 +67,7 @@ class SlayerzController < ApplicationController
         redirect_to new_slayerz_path
     end
 
+    # sanitise upddation of slayer information
     private
     def profile_params
         params.require(:slayer_info).permit(:weapon, :biography, :profile_image)

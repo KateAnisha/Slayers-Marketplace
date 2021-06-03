@@ -33,6 +33,7 @@ class JobsController < ApplicationController
         @job = Job.find(params[:id])
     end
 
+    # Method to update job
     def update
         @job = Job.find(params[:id])
         
@@ -45,7 +46,6 @@ class JobsController < ApplicationController
     end
 
     # Enable slayers to accept a job
-
     def accepted_job
         @current_job = Job.find(params[:id])
         
@@ -63,18 +63,18 @@ class JobsController < ApplicationController
         redirect_to jobs_path
     end
 
-   
-
+    # Authorise creation of job
     def check_auth
         authorize Job
     end
 
-    # Authorise creation of job 
+    # sanatise 
     private
     def job_params
         params.require(:job).permit(:title, :description, :amount, :accepted)
     end
 
+    # Sanitise accepted job status
     def accepted_job_params
         params.require(:job).permit(:accepted)
     end
