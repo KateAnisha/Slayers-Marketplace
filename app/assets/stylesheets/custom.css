@@ -1,6 +1,7 @@
 @font-face {
     font-family: Slayerz-font;
     src: font_url("../fonts/Martyric_PersonalUse.ttf");
+    src: <%= font_url('Martyric_PersonalUse.ttf') %>
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
@@ -48,6 +49,7 @@ header {
 
 /* Nav Logo */
 h1 {
+    
     font-family: Slayerz-font;
     color: #720620;
     font-size: 4em;
