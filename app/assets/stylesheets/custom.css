@@ -1,7 +1,6 @@
 @font-face {
     font-family: Slayerz-font;
-    src: font_url("../fonts/Martyric_PersonalUse.ttf");
-    src: <%= font_url('Martyric_PersonalUse.ttf') %>
+    src: font_url("assets/fonts/Martyric_PersonalUse.ttf");
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
@@ -133,7 +132,7 @@ a.btn-full:hover, a.btn-empty:hover {
 /* Page styles */
 
 .hero {
-    background-image: url("slayerz-bg.png");
+    background-image: url("../images/slayerz-bg.png");
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
