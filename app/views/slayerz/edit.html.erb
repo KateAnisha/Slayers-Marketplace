@@ -1,17 +1,21 @@
-<h2>Edit your Slayer profile here</h2>
+<h3>Edit your Slayer profile here</h3>
 
+<div class="field"> 
 <%= form_for :slayer_info, url: slayerz_path(@slayer_info), method: :patch do |f| %>
-    <%= f.label :weapon %>
-    <%= f.text_field :weapon%>
+    
+    <%= f.label :weapon %><br />
+    <%= f.text_field :weapon, class: "form-control"%>
+<br /><br />
+    <%= f.label :biography %><br />
+    <%= f.text_area :biography, class: "form-control profile"%>
 
-    <%= f.label :biography %>
-    <%= f.text_area :biography%>
-
-    <%= f.label :profile_image %>
-    <%= f.file_field :profile_image %>
+<br /><br />
+    <%= f.label :profile_image %><br />
+    <%= f.file_field :profile_image, class: "form-control profile" %>
 
     <%# <%= f.label :race %>
     <%# <%= f.collection_select :race, @races, :id, :race_name %>
-
+<br /><br />
     <%= f.submit "Update profile"%>
 <% end %>
+</div>
