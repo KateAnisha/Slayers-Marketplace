@@ -154,26 +154,12 @@ a.btn-full:hover, a.btn-empty:hover {
     text-align: center;
 }
 
+/* Jobs section */ 
 .jobs {
     grid-area: jobs;
-   
 }
 
-.job-container {
-    width: 100%;
-    
-}
-
-.job-card {
-    /* width: 120px;
-    margin: 0; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; */
-}
-
-.job-items {
+.job-container, .slayerz-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -181,23 +167,23 @@ a.btn-full:hover, a.btn-empty:hover {
     margin: 0 22px;
 }
 
-.inner-job {
+.job-card, .slayerz-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 30%;
-    height: 330px;
+    height: auto;
     margin: 22px;
     background-color: #200108;
     padding: 22px;
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
     text-align: center;
-    
+    word-break: break-all;
 }
 
-.inner-job > a{
+.job-card > a, .slayerz-card > a {
     border: 2px solid #520616;
     background-color: #15040a;
     opacity: 0.6;
@@ -215,12 +201,13 @@ a.btn-full:hover, a.btn-empty:hover {
     margin-top: 42px;
 }
 
-.inner-job > a:hover {
+.job-card > a:hover, .slayerz-card > a:hover {
     background-color: #520616;
     transform: scale(-1, 1);
     opacity: 1;
     box-shadow: 3px 3px 10px #000;
 }
+
 
 .slayers {
     grid-area: slayers;

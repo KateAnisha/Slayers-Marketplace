@@ -18,30 +18,27 @@
 <section class="jobs">
 <h3>Available Hunts</h3>
     <div class="job-container">
-        <div class="job-card">
-            <div class="job-items">
-                <% @jobs.each do |job| %>
-                    <div class="inner-job">
-                    <h4><%= job.title%></h4>
-                    <p><%= job.description%></p>
-                    <%= link_to 'View more', job_path(job)%>
-                    </div>
-                <% end %> 
+        <% @jobs.each do |job| %>
+            <div class="job-card">
+                <h4><%= job.title%></h4>
+                <p><%= job.description%></p>
+                <%= link_to 'View Hunt', job_path(job)%>
             </div>
-        </div>
+        <% end %> 
     </div>
 </section>
 
 
 <section class="slayers">
-    <% @users.each do |user| %>
-        <p>
-        
-        <%= user.first_name%>
-        <% user.slayer_info %>
-        <%= link_to 'View more', slayerz_path(user.slayer_info) %>
-        </p>
-    <% end %>
+    <h3>Featured Slayerz</h3>
+    <div class="slayerz-container">
+        <% @users.each do |user| %>
+            <div class="slayerz-card">
+                <%= user.first_name%> <%= user.last_name%>
+                <%= link_to 'Hire me', slayerz_path(user.slayer_info) %>
+            </div>
+        <% end %>
+    </div>
 </section>
 
 
