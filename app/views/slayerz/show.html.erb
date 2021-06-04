@@ -1,11 +1,15 @@
-<h3><%= @slayer.user.first_name %></h3>
-
-
 <!-- View for individual slayer profiles -->
-<% if @slayer.profile_image.attached?%>
-    <p><%= cl_image_tag @slayer.profile_image.key, crop: :scale, width: 250, cloud_name: 'kate-anisha' %></p>
-<% end %>
-<p>Name: <%= @slayer.user.first_name %></p>
-<p>Weapon: <%= @slayer.weapon %></p>
-<p>Biography: <%= @slayer.biography %></p>
+
+<div class="show-container">
+    <div class="show-info">
+        <% if @slayer.profile_image.attached?%>
+            <p><%= cl_image_tag @slayer.profile_image.key, crop: :scale, width: 500, cloud_name: 'kate-anisha' %></p>
+        <% end %>
+        <h3><%= @slayer.user.first_name %> <%= @slayer.user.last_name %></h3>
+        <hr>
+        <p><strong>Name:</strong> <%= @slayer.user.first_name %> <%= @slayer.user.last_name %> </p>
+        <p><strong>Weapon:</strong>  <%= @slayer.weapon %></p>
+        <p><strong>Biography:</strong>  <%= @slayer.biography %></p>
+    </div>
+</div>
 

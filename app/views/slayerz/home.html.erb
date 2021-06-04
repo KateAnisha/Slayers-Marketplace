@@ -7,8 +7,8 @@
         
     <% else %>
         <div class="btn-container">
-                <%= link_to "Login", new_user_session_path, class: "btn-full" %>
-                <%= link_to "Register", new_user_registration_path, class: "btn-empty"%>
+            <%= link_to "Login", new_user_session_path, class: "btn-empty" %>
+            <%= link_to "Register", new_user_registration_path, class: "btn-full"%>
         </div>
     <% end %>
 </section>
@@ -34,7 +34,9 @@
     <div class="slayerz-container">
         <% @users.each do |user| %>
             <div class="slayerz-card">
+                
                 <%= user.first_name%> <%= user.last_name%>
+                
                 <%= link_to 'Hire me', slayerz_path(user.slayer_info) %>
             </div>
         <% end %>

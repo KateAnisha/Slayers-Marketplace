@@ -16,7 +16,7 @@ class SlayerzController < ApplicationController
         @users = slayer_role.users
     end
 
-    # Show individual slayer page with 
+    # Show individual slayer page  
     def show
         @slayer = SlayerInfo.find(params[:id])
     end
