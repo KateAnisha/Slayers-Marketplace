@@ -4,12 +4,15 @@ class SlayerzController < ApplicationController
     # Application home page
     def home
         @users = User.all
-        slayer_role = Roles.find_by(name: 'slayer')
-        @users = slayer_role.users
-        @users = @users.sample(3)
+        # slayer_role = Roles.find_by(name: 'slayer')
+        # @slayers = Roles.find_by_name('slayer').users
+        
+        # @slayers = @slayers.sample(3)
+        
         
         @jobs = Job.all
         @jobs = @jobs.sample(5)
+        
     end
 
     # Slayers index page, displaying all slayers for users to browse and message directly.

@@ -14,31 +14,35 @@
 </section>
 
 <% if user_signed_in? %>
+    <section class="slayers">
+        <h3>Featured Slayerz</h3>
+        <div class="slayerz-container">
+            <% @users.each do |user| %>
+                <div class="slayerz-card">
+                    <% if user.has_role?(:slayer) && user.slayer_info %>
+                        <% if user.slayer_info.profile_image.attached?%>
+                        <p><%= cl_image_tag user.slayer_info.profile_image.key, crop: :scale, class: "style-img", cloud_name: 'kate-anisha' %></p>
+                    <% end %>
+                    <%= user.first_name%> <%= user.last_name%>
+                    <%= link_to 'Hire me', slayerz_path(user.slayer_info) %>
+                </div>
+                <% end %>
+            <% end %>
+        </div>
+    </section>
 
-<section class="slayers">
-    <h3>Featured Slayerz</h3>
-    <div class="slayerz-container">
-        <% @users.each do |user| %>
-            <div class="slayerz-card">
-                
-                <%= user.first_name%> <%= user.last_name%>
-                
-                <%= link_to 'Hire me', slayerz_path(user.slayer_info) %>
-            </div>
-        <% end %>
-    </div>
-</section>
 
-<section class="jobs">
-<h3>Available Hunts</h3>
-    <div class="job-container">
-        <% @jobs.each do |job| %>
-            <div class="job-card">
-                <h4><%= job.title%></h4>
-                <p><%= job.description%></p>
-                <%= link_to 'View Hunt', job_path(job)%>
-            </div>
-        <% end %> 
-    </div>
-</section>
+    <section class="jobs">
+    <h3>Available Hunts</h3>
+        <div class="job-container">
+            <% @jobs.each do |job| %>
+                <div class="job-card">
+                    <h4><%= job.title%></h4>
+                    <p><%= job.description%></p>
+                    <%= link_to 'View Hunt', job_path(job)%>
+                </div>
+            <% end %> 
+        </div>
+    </section>
+
 <% end %>

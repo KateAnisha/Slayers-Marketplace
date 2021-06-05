@@ -1,12 +1,16 @@
 
-<h3>Browse all Slayerz</h3>
+<h3>All Slayerz</h3>
 
 <div class="slayerz-container">
     <% @users.each do |user| %>
         <div class="slayerz-card">
+            <% if user.has_role?(:slayer) && user.slayer_info %>
+                <% if user.slayer_info.profile_image.attached?%>
+                <p><%= cl_image_tag user.slayer_info.profile_image.key, crop: :scale, class: "style-img", cloud_name: 'kate-anisha' %></p>
+            <% end %>
             <%= user.first_name%> <%= user.last_name%>
-            <% user.slayer_info %>
-            <%= link_to 'View more', slayerz_path(user.slayer_info) %>
+            <%= link_to 'Hire me', slayerz_path(user.slayer_info) %>
         </div>
+        <% end %>
     <% end %>
 </div>
