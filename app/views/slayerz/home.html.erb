@@ -17,6 +17,8 @@
     <section class="slayers">
         <h3>Featured Slayerz</h3>
         <div class="slayerz-container">
+
+        
             <% @users.each do |user| %>
                 <div class="slayerz-card">
                     <% if user.has_role?(:slayer) && user.slayer_info %>

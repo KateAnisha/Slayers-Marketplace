@@ -1,10 +1,12 @@
-<h1>All conversations</h1>
+<h3>Messages</h3>
 
-<% @conversations.each do |conversation| %>
-<div>
-    <%= link_to conversation.subject, conversation_path(conversation) %>
+<div class="show-container">
+    <div class="show-info">
+        <h5>Current conversations</h5>
+        <% @conversations.each do |conversation| %>
+            <%= link_to conversation.subject, conversation_path(conversation) %>
+        <% end %>
+        <br><br><br>
+        <%= link_to "New Message", new_conversation_path%>
+     </div>
 </div>
-
-<% end %>
-
-<%= link_to "New Message", new_conversation_path %>

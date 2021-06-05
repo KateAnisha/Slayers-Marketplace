@@ -4,11 +4,11 @@ class SlayerzController < ApplicationController
     # Application home page
     def home
         @users = User.all
-        # slayer_role = Roles.find_by(name: 'slayer')
-        # @slayers = Roles.find_by_name('slayer').users
+        slayer_role = Roles.find_by(name: 'slayer')
+        @slayers = Roles.find_by_name('slayer').users
         
-        # @slayers = @slayers.sample(3)
-        
+        @slayers = @slayers.sample(3)
+
         
         @jobs = Job.all
         @jobs = @jobs.sample(5)

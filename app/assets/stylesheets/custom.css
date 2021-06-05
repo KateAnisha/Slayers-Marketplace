@@ -105,6 +105,18 @@ a.btn-empty, a.btn-full {
     letter-spacing: 3px;
 }
 
+a {
+    color: #520616;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: #911630;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 .btn-full, .btn-empty {
     width: 150px;
     height: 40px;
@@ -178,16 +190,16 @@ a.btn-full:hover, a.btn-empty:hover {
     margin: 22px;
     background-color: #200108;
     padding: 22px;
-    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     text-align: center;
     word-break: normal;
 }
 
 .style-img {
-    width: 400px;
+    width: 380px;
     object-fit: cover;
-
+    margin-top: -22px;
 }
 
 .job-card > a, .slayerz-card > a {

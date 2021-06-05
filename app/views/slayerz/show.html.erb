@@ -10,6 +10,7 @@
         <p><strong>Name:</strong> <%= @slayer.user.first_name %> <%= @slayer.user.last_name %> </p>
         <p><strong>Weapon:</strong>  <%= @slayer.weapon %></p>
         <p><strong>Biography:</strong>  <%= @slayer.biography %></p>
+        <%= link_to "Contact", conversations_path, class: "btn-empty" %>
     </div>
 </div>
 
