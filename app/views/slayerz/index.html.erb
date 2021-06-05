@@ -1,12 +1,12 @@
 
-<h1>Hire a slayer</h1>
+<h3>Browse all Slayerz</h3>
 
-<h2>all slayers</h2>
-
-<% @users.each do |user| %>
-    <p>
-        <%= user.first_name%>
-        <% user.slayer_info %>
-        <%= link_to 'View more', slayerz_path(user.slayer_info) %>
-    </p>
-<% end %>
+<div class="slayerz-container">
+    <% @users.each do |user| %>
+        <div class="slayerz-card">
+            <%= user.first_name%> <%= user.last_name%>
+            <% user.slayer_info %>
+            <%= link_to 'View more', slayerz_path(user.slayer_info) %>
+        </div>
+    <% end %>
+</div>
